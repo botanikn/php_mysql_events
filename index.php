@@ -11,7 +11,6 @@ include 'book.php';
 // Добавляем файл с просмотром категорий билетов
 include 'get_ticket_type.php';
 
-
 // Добавляем файл с просмотром событий
 include 'get_events.php';
 
@@ -40,7 +39,6 @@ if ($method == 'POST' && strpos($request_uri, '/index.php/book') !== false) {
     book($cn);
 
 }
-
 
 // Эндпоинт для просмотра категорий билетов
 if ($method == 'GET' && strpos($request_uri, '/index.php/get_ticket_type') !== false) {

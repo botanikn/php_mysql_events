@@ -1,7 +1,7 @@
 <?php
 
 function get_ticket_type($cn) {
-    $query = "SELECT `type_name`, `multi` from `ticket_type`";
+    $query = "SELECT `id`, `type_name`, `multi` from `ticket_type`";
     $result = mysqli_query($cn, $query);
 
     $ticket_type = [];
@@ -9,8 +9,9 @@ function get_ticket_type($cn) {
     while ($row = mysqli_fetch_row($result)) {
         if ($row) {
             $ticket_type[] = [
-                "type name" => $row[0],
-                "multiplicator" => $row[1]
+                "type id" => $row[0],
+                "type name" => $row[1],
+                "multiplicator" => $row[2]
             ];
         }
     }
